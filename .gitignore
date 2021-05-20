@@ -13,3 +13,5 @@ buildNumber.properties
 .project
 
 **.log
+**.log.gz
+bin/

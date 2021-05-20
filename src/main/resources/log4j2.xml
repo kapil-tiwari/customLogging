@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
-	<CustomLevels>
-		<CustomLevel name="AUDIT" intLevel="450" />
-	</CustomLevels>
+
 	<Appenders>
 		<Console name="ConsoleAppender" target="SYSTEM_OUT">
 			<JsonLayout complete="false" compact="false"
