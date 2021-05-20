@@ -1,0 +1,4 @@
+17:28:31.738 [main] TRACE com.nagarro.kapil.CustomLog - Trace
+17:28:31.833 [main] DEBUG com.nagarro.kapil.CustomLog - Debug log
+17:28:31.836 [main] INFO  com.nagarro.kapil.CustomLog - User details : User [id=1, userName=Kapil, age=24]
+17:28:31.843 [main] WARN  com.nagarro.kapil.CustomLog - We've just greeted the user!

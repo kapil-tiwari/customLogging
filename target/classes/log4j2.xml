@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<CustomLevels>
+		<CustomLevel name="AUDIT" intLevel="450" />
+	</CustomLevels>
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<JsonLayout complete="false" compact="false"
+				objectMessageAsJsonObject="true">
+				<KeyValuePair key="StudytonightField"
+					value="studytonightValue" />
+			</JsonLayout>
+			<Filters>
+				<ThresholdFilter level="trace" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</Filters>
+		</Console>
+
+		<RollingFile name="AuditFileAppender" fileName="audit.log"
+			filePattern="audit.%i.log.gz" ignoreExceptions="false">
+			<JsonLayout complete="false" compact="false"
+				objectMessageAsJsonObject="true">
+
+			</JsonLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="1 KB" />
+			</Policies>
+			<Filters>
+				<ThresholdFilter level="AUDIT" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</Filters>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="trace">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="AuditFileAppender" />
+		</Root>
+	</Loggers>
+</Configuration>

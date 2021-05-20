@@ -1,0 +1,28 @@
+{
+  "thread" : "main",
+  "level" : "INFO",
+  "loggerName" : "com.nagarro.kapil.CustomLog",
+  "message" : "User details : User [id=1, userName=Kapil, age=24]",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "instant" : {
+    "epochSecond" : 1621511911,
+    "nanoOfSecond" : 836000000
+  },
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "thread" : "main",
+  "level" : "WARN",
+  "loggerName" : "com.nagarro.kapil.CustomLog",
+  "message" : "We've just greeted the user!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "instant" : {
+    "epochSecond" : 1621511911,
+    "nanoOfSecond" : 843000000
+  },
+  "threadId" : 1,
+  "threadPriority" : 5
+}
