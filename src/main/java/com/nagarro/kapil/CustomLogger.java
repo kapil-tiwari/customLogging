@@ -4,12 +4,17 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.ThreadContext;
 import org.apache.logging.log4j.message.Message;
 import org.apache.logging.log4j.message.MessageFactory;
 import org.apache.logging.log4j.spi.AbstractLogger;
 import org.apache.logging.log4j.spi.ExtendedLoggerWrapper;
 import org.apache.logging.log4j.util.MessageSupplier;
 import org.apache.logging.log4j.util.Supplier;
+
+import com.nagarro.enums.Event;
+import com.nagarro.enums.UserAction;
+
 
 /**
  * Extended Logger interface with convenience methods for
@@ -519,6 +524,20 @@ public final class CustomLogger extends ExtendedLoggerWrapper {
      */
     public void audit(final String message, final Object p0, final Object p1) {
         logger.logIfEnabled(FQCN, AUDIT, null, message, p0, p1);
+    }
+    
+    /**
+     * For capturing Custom data Event and action
+     * @param message
+     * @param p0
+     * @param p1
+     */
+    public void audit(final Event event, final UserAction action, final String message) {
+        ThreadContext.put("event", event.toString());
+        ThreadContext.put("action", action.toString());
+        final Object p0 =null; 
+        final Object p1 = null;
+    	logger.logIfEnabled(FQCN, AUDIT, null, message, p0, p1);
     }
 
     /**

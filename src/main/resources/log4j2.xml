@@ -3,10 +3,13 @@
 
 	<Appenders>
 		<Console name="ConsoleAppender" target="SYSTEM_OUT">
-			<JsonLayout complete="false" compact="false"
-				objectMessageAsJsonObject="true">
-				<KeyValuePair key="StudytonightField"
-					value="studytonightValue" />
+			<JsonLayout complete="false" compact="false" properties="true"
+				objectMessageAsJsonObject="true"
+				locationInfo="true">
+				<KeyValuePair key="role" value="${ctx:userRole}" />
+				<KeyValuePair key="user" value="${ctx:userEmail}" />
+<!-- 				<KeyValuePair key="event" value="${ctx:event}" />
+				<KeyValuePair key="action" value="${ctx:action}" /> -->
 			</JsonLayout>
 			<Filters>
 				<ThresholdFilter level="trace" onMatch="ACCEPT"
