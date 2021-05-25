@@ -38,7 +38,7 @@ public final class CustomLogger extends ExtendedLoggerWrapper {
      * 
      * @return The custom Logger for the calling class.
      */
-    public static CustomLogger create() {
+    public static CustomLogger getLogger() {
         final Logger wrapped = LogManager.getLogger();
         return new CustomLogger(wrapped);
     }
@@ -51,10 +51,6 @@ public final class CustomLogger extends ExtendedLoggerWrapper {
      *            If null it will default to the calling class.
      * @return The custom Logger.
      */
-    public static CustomLogger create(final Class<?> loggerName) {
-        final Logger wrapped = LogManager.getLogger(loggerName);
-        return new CustomLogger(wrapped);
-    }
     public static CustomLogger getLogger(final Class<?> loggerName) {
         final Logger wrapped = LogManager.getLogger(loggerName);
         return new CustomLogger(wrapped);
@@ -71,7 +67,7 @@ public final class CustomLogger extends ExtendedLoggerWrapper {
      *            a warning if mismatched.
      * @return The custom Logger.
      */
-    public static CustomLogger create(final Class<?> loggerName, final MessageFactory messageFactory) {
+    public static CustomLogger getLogger(final Class<?> loggerName, final MessageFactory messageFactory) {
         final Logger wrapped = LogManager.getLogger(loggerName, messageFactory);
         return new CustomLogger(wrapped);
     }
@@ -85,7 +81,7 @@ public final class CustomLogger extends ExtendedLoggerWrapper {
      *            the logger name.
      * @return The custom Logger.
      */
-    public static CustomLogger create(final Object value) {
+    public static CustomLogger getLogger(final Object value) {
         final Logger wrapped = LogManager.getLogger(value);
         return new CustomLogger(wrapped);
     }
@@ -102,7 +98,7 @@ public final class CustomLogger extends ExtendedLoggerWrapper {
      *            a warning if mismatched.
      * @return The custom Logger.
      */
-    public static CustomLogger create(final Object value, final MessageFactory messageFactory) {
+    public static CustomLogger getLogger(final Object value, final MessageFactory messageFactory) {
         final Logger wrapped = LogManager.getLogger(value, messageFactory);
         return new CustomLogger(wrapped);
     }
@@ -114,7 +110,7 @@ public final class CustomLogger extends ExtendedLoggerWrapper {
      *            be used.
      * @return The custom Logger.
      */
-    public static CustomLogger create(final String name) {
+    public static CustomLogger getLogger(final String name) {
         final Logger wrapped = LogManager.getLogger(name);
         return new CustomLogger(wrapped);
     }
@@ -129,7 +125,7 @@ public final class CustomLogger extends ExtendedLoggerWrapper {
      *            a warning if mismatched.
      * @return The custom Logger.
      */
-    public static CustomLogger create(final String name, final MessageFactory messageFactory) {
+    public static CustomLogger getLogger(final String name, final MessageFactory messageFactory) {
         final Logger wrapped = LogManager.getLogger(name, messageFactory);
         return new CustomLogger(wrapped);
     }
